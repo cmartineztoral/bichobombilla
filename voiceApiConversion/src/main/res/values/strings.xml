@@ -1,0 +1,4 @@
+<resources>
+    <string name="hint">Click aquí para empezar a hablar</string>
+    <string name="action_settings">Settings</string>
+</resources>
