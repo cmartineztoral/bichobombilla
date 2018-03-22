@@ -17,10 +17,12 @@ import ai.api.android.AIService;
 import ai.api.model.AIError;
 import ai.api.model.AIOutputContext;
 import ai.api.model.AIResponse;
+import ai.api.model.ResponseMessage;
 import ai.api.model.Result;
 
 import com.google.gson.JsonElement;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -67,12 +69,14 @@ public class VoiceToApi extends AppCompatActivity implements AIListener {
             }
         }
 
+        String speech = result.getFulfillment().getSpeech();
+
         // Show results in TextView.
         mVoiceInputTv.setText("Query:" + result.getResolvedQuery() +
                 "\nAction: " + result.getAction() +
                 "\nParameters: " + parameterString +
                 "\nIntent: " + result.getResolvedQuery() +
-                "\nAll info: " + result.toString());
+                "\nMessages: " + speech);
     }
 
     @Override
