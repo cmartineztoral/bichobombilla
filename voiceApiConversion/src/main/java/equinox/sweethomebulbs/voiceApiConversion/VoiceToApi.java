@@ -26,7 +26,6 @@ import java.util.Map;
 
 public class VoiceToApi extends AppCompatActivity implements AIListener {
 
-    private static final int REQ_CODE_SPEECH_INPUT = 100;
     private TextView mVoiceInputTv;
     private ImageButton mSpeakBtn;
 
@@ -72,9 +71,8 @@ public class VoiceToApi extends AppCompatActivity implements AIListener {
         mVoiceInputTv.setText("Query:" + result.getResolvedQuery() +
                 "\nAction: " + result.getAction() +
                 "\nParameters: " + parameterString +
-                "\nIntent: " + result.getResolvedQuery());
-
-        List<AIOutputContext> contexts = result.getContexts();
+                "\nIntent: " + result.getResolvedQuery() +
+                "\nAll info: " + result.toString());
     }
 
     @Override
